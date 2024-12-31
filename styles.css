@@ -1,0 +1,185 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #fc7406;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Стилі для контейнерів */
+.restaurants, .menu-items, table {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.restaurant, .menu-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restaurant:hover, .menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant a {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Стилі для таблиць */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-sizing: border-box;
+    table-layout: fixed;  /* Фиксированная ширина столбцов */
+}
+
+table th, table td {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+    word-wrap: break-word;
+}
+
+table th {
+    background-color: #e6a224;
+    color: #fff;
+    text-align: center; /* Центрируем заголовки */
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Устанавливаем фиксированную ширину для каждого столбца */
+table th:nth-child(1), table td:nth-child(1) {
+    width: 10%;  /* Номер замовлення */
+}
+
+table th:nth-child(2), table td:nth-child(2) {
+    width: 20%;  /* Дата */
+}
+
+table th:nth-child(3), table td:nth-child(3) {
+    width: 20%;  /* Ім'я клієнта */
+}
+
+table th:nth-child(4), table td:nth-child(4) {
+    width: 15%;  /* Телефон */
+}
+
+table th:nth-child(5), table td:nth-child(5) {
+    width: 25%;  /* Страви */
+}
+
+table th:nth-child(6), table td:nth-child(6) {
+    width: 10%;  /* Дії */
+}
+
+/* Стиль для кнопок в таблице */
+table td .action-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #e6a224;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+table td .action-btn:hover {
+    background-color: #10d820;
+}
+
+/* Стилі для кнопок */
+button, input[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #e6a224;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #10d820;
+}
+
+/* Стилі для форм */
+form input[type="text"], form input[type="number"], form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: auto;
+    margin-top: 20px;
+}
+
+/* Медіа-запити */
+@media (max-width: 768px) {
+    .restaurant, .menu-item {
+        width: calc(50% - 20px);
+    }
+
+    table th, table td {
+        padding: 8px 12px;  /* Уменьшаем отступы для мобильных устройств */
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant, .menu-item {
+        width: 100%;
+    }
+
+    .restaurants, .menu-items {
+        flex-direction: column;
+    }
+
+    table th, table td {
+        padding: 6px 10px;  /* Еще меньше отступы */
+    }
+}
